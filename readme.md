@@ -1,4 +1,4 @@
-## State Machine DSL
+# State Machine DSL
 
 Simple DSL to describe a State Machine in Scala.
 
@@ -14,7 +14,7 @@ This repo consists of 3 projects
 - plugin-intelliJ  Visual editor / executor for the DSL in IntelliJ
 - plugin-netbeans  Visual editor / executor for the DSL in Netbeans
 
-# References
+## References
 
 DSL: 
   http://debasishg.blogspot.nl/2008/05/designing-internal-dsls-in-scala.html
