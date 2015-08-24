@@ -1,23 +1,3 @@
-/**
-*
-* DSL:
-* http://debasishg.blogspot.nl/2008/05/designing-internal-dsls-in-scala.html
-*
-* Graph:
-* http://www.scala-graph.org/guides/test.html
-*
-* Scala:
-* http://stackoverflow.com/questions/23890507/creating-infix-operators-in-scala
-* http://stackoverflow.com/questions/12335388/line-continuation-character-in-scala
-*
-* Intellij Plugin:
-* http://bjorn.tipling.com/how-to-make-an-intellij-idea-plugin-in-30-minutes
-* */
-
-
-
-
-
 
 object DSL {
 
