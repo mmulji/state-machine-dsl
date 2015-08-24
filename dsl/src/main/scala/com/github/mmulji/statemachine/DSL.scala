@@ -13,7 +13,6 @@ object DSL {
 
    var name: String = ""
    var states: Seq[State] = null
-   var services: Seq[Service] = null
    var transitions: Seq[Transition] = null
 
    def called (i: String) = {
@@ -23,11 +22,6 @@ object DSL {
 
    def has(i : State*) = {
      states = i
-     this
-   }
-
-   def runs(i: Service*) = {
-     services = i
      this
    }
 
@@ -49,24 +43,6 @@ object DSL {
      this.states = b
      this
    }
-  }
-
-  class Service {
-
-   var name: String = ""
-   var executor: (Any) => Unit = null
-   var characteristics: Seq[(String, String)] = Seq[(String, String)]()
-
-   def called (i: String) = {
-     name = i
-     this
-   }
-
-   def properties (i: (String, String)*) = {
-     characteristics = i
-     this
-   }
-
   }
 
   class Transition {
