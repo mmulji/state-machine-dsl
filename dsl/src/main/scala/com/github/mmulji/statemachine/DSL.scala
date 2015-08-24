@@ -1,3 +1,4 @@
+package com.github.mmulji.statemachine
 
 object DSL {
 
@@ -104,7 +105,3 @@ object DSL {
   }
 
 }
-
-
-
-// when <event> check <condition> move from <state> to <state>

@@ -1,4 +1,6 @@
+import com.github.mmulji.statemachine.DSL
 import DSL._
+import com.github.mmulji.statemachine.DSL
 import org.scalatest.{Matchers, WordSpecLike}
 
 

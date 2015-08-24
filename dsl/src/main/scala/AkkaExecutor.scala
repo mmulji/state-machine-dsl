@@ -1,8 +1,0 @@
-/**
- *
- */
-
-
-trait AkkaExecutor extends Executor {
-
-}

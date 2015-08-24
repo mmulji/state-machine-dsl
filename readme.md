@@ -14,7 +14,7 @@ This repo consists of 3 projects
 - plugin-intelliJ  Visual editor / executor for the DSL in IntelliJ
 - plugin-netbeans  Visual editor / executor for the DSL in Netbeans
 
-References
+# References
 
 DSL: 
   http://debasishg.blogspot.nl/2008/05/designing-internal-dsls-in-scala.html
@@ -29,4 +29,4 @@ Scala:
 Intellij Plugin:
   http://bjorn.tipling.com/how-to-make-an-intellij-idea-plugin-in-30-minutes
 
-
+[Please note that this is an experimental learning project and still is WIP]
