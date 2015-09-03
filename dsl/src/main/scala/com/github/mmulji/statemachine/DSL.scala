@@ -1,11 +1,16 @@
 package com.github.mmulji.statemachine
 
+import scala.language.postfixOps
+
+
 object DSL {
+
 
   case class State(name: String)
   case class Message(name: String)
 
-  implicit def addStateMachine = {
+
+  implicit def createStateMachine = {
     val sm = new StateMachine()
     sm
   }
@@ -15,27 +20,39 @@ object DSL {
 
   class StateMachine {
 
-   var _name: String = ""
-   var _states: Seq[State] = null
-   var _transitions: Seq[Transition] = null
+    var _name: String = ""
+    var _currentState: State = null
+    var _startingState: State = null
+    var _states: Set[State] = null
+    var _transitions: Seq[Transition] = null
 
-   def called (i: String) = {
+    def called (i: String) = {
      _name = i
      this
-   }
+    }
 
-   def has(i : State*) = {
-     _states = i
-     this
-   }
+    def has(i : State*) = {
+      _states ++ i
+      this
+    }
 
-   def using(i: Transition*) = {
+    def starting(i : State) = {
+      _startingState = i
+      this
+    }
+
+    def using(i: Transition*) = {
      _transitions = i
      this
-   }
+    }
 
-   def start = {}
-   def stop = {}
+    def :=:(stateMachine: StateMachine) = {
+      this._name = stateMachine._name
+      this._states = stateMachine._states
+      this._startingState = stateMachine._startingState
+      this._transitions = stateMachine._transitions
+    }
+
   }
 
   class States {
@@ -53,17 +70,17 @@ object DSL {
 
     type whenFn = Any => Boolean
 
-    var _when : (Any => Boolean) = null
+    var _check : (Any => Boolean) = null
     var _msg : Message = Message("")
     var _from: State = State("")
     var _to: State = State("")
 
-    def using(i: Message) = {
+    def when(i: Message) = {
      _msg = i
      this
     }
 
-    def from(i: State) = {
+    def moveFrom(i: State) = {
      _from = i
      this
     }
@@ -74,7 +91,7 @@ object DSL {
     }
 
     def when(x: whenFn): Transition = {
-      _when = x
+      _check = x
       this
     }
 
